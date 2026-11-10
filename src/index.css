@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Paleta Semântica HSL */
+    --primary-ocean: 199 89% 48%; /* #0EA5E9 */
+    --primary-ocean-dark: 201 96% 32%; /* #0369a1 */
+    --primary-ocean-light: 199 92% 90%; /* #e0f2fe */
+    --primary-ocean-glow: 199 89% 48% / 0.15;
+
+    --secondary-ice: 210 40% 98%; /* #F8FAFC */
+    --secondary-ice-pure: 0 0% 100%;
+    --secondary-ice-subtle: 214 32% 95%;
+
+    --clinical-navy: 222 47% 11%; /* #0b1329 */
+    --clinical-slate: 217 33% 17%; /* #1e293b */
+    --clinical-text-main: 222 47% 11%;
+    --clinical-text-muted: 215 16% 47%;
+    --clinical-border: 214 32% 91%;
+    --clinical-border-focus: 199 89% 48%;
+
+    --accent-teal: 172 66% 40%;
+    --accent-mint: 158 64% 52%;
+
+    --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+  }
+
+  * {
+    border-color: hsl(var(--clinical-border));
+  }
+
+  html {
+    font-family: var(--font-body);
+    color: hsl(var(--clinical-text-main));
+    background-color: hsl(var(--secondary-ice));
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-heading);
+    letter-spacing: -0.035em;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Utilitários Semânticos de Estilo de Agência */
+.font-display {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Efeitos de Camada e Profundidade */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-panel-dark {
+  background: rgba(11, 19, 41, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hairline-border {
+  border: 1px solid rgba(14, 165, 233, 0.18);
+}
+
+.subtle-border {
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.shadow-elevation-1 {
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+}
+
+.shadow-elevation-2 {
+  box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.05);
+}
+
+.shadow-elevation-hover {
+  box-shadow: 0 20px 40px -15px rgba(14, 165, 233, 0.22), 0 10px 20px -5px rgba(15, 23, 42, 0.08);
+}
+
+/* Micro-padrões e ruído estético */
+.bg-grid-medical {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(14, 165, 233, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 165, 233, 0.05) 1px, transparent 1px);
+}
+
+.bg-radial-hero {
+  background: radial-gradient(circle at 60% 20%, rgba(14, 165, 233, 0.14) 0%, rgba(248, 250, 252, 0) 70%);
+}
+
+.bg-radial-dark {
+  background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.2) 0%, rgba(11, 19, 41, 1) 75%);
+}
+
+/* Animação suave para scroll */
+@keyframes subtle-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-subtle-float {
+  animation: subtle-float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.25); opacity: 0; }
+  100% { transform: scale(0.95); opacity: 0; }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.5s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Clínica OrtoFísio - Fisioterapia e Pilates",
+  "description": "Centro clínico de referência em Fisioterapia Traumato-Ortopédica, Pilates Clínico e RPG. Reabilitação biomecânica com foco em longevidade funcional.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
